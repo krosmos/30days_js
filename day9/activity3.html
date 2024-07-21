@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Removing elements</title>
+</head>
+<body>
+<!---------------------Task 5------------------------->
+    <div class="toRemove">this element will be removed.</div>
+    <script>
+        let removeElement = document.querySelector('.toRemove');
+        removeElement.remove();
+    </script>
+    <p>if the above line is not visible, then the element is removed successfully.</p>
+
+<!---------------------Task 6------------------------->
+    <ul>
+        <li>child 1</li>
+        <li>child 2</li>
+        <li>child 3</li>
+        <li>child 4</li>
+    </ul>
+    <script>
+        document.querySelector('ul').lastElementChild.remove();
+    </script>
+    <p>the last child of ul element has been removed successfully</p>
+</body>
+</html>
