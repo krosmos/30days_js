@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <title>Event Delegation</title>
+</head>
+<body>
+<!--------------------task 9----------------------->
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+    </ul>
+    <script>
+        let list = document.querySelector('ul');
+        list.addEventListener('click',(e)=>{
+            if (e.target.tagName === 'LI')
+            console.log(e.target.innerHTML);
+        });
+    </script>
+<!--------------------task 10---------------------->
+    </div>
+    <div class="parent">
+        <button type="button" class="addItem">Add</button>
+        <ul class="addList">
+        </ul>
+    </div>
+    <script>
+        const parent = document.querySelector('.parent');
+        const addList = document.querySelector('.addList');
+        const addItem = document.querySelector('.addItem');
+
+        addItem.addEventListener('click', () => {
+            const newList = document.createElement('li');
+            newList.textContent = `List Item ${addList.children.length + 1}`;
+            addList.appendChild(newList);
+        });
+
+        parent.addEventListener('click', (e) => {
+            if (e.target.tagName === 'LI') 
+                console.log(e.target.innerHTML);
+        });
+    </script>
+
+</body>
+</html>
