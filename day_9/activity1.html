@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <title>Selecting and Manipulating Elements</title>
+</head>
+<body>
+    <h2>Task 1</h2>
+    <p id="01">Context</p>
+    <button onclick="changetext();">
+        changeText
+    </button>
+
+<!-------------------000---------------------------->
+    <h2>Task 2</h2>
+
+    <div class="box" 
+    style="background-color: rgb(73, 72, 77); 
+    height: 100px; width: 100px;">
+    </div>
+
+    <button  onclick="changecolor();">
+        changeColor
+    </button>
+<!-------------------------------------------------->
+    <script>
+        function changetext(){
+            let a = document.getElementById('01');
+            a.innerHTML = "Changed Context";
+        }
+        function changecolor(){
+            let b = document.getElementsByClassName('box');
+            b[0].style.backgroundColor = '#16a7eb';
+        }
+    </script>
+</body>
+</html>

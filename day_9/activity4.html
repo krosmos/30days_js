@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Modifying Attributes and Classes</title>
+    <style>
+        .fit-to-screen{
+            width: 80vw;
+        }
+        .small_n_margin{
+            width: 50vw;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<!---------------------Task 7------------------------->
+    <img class="fit-to-screen" src="toji.jpeg">
+    <script>
+        let a = document.querySelector('img');
+        a.src="tanjiro.jpg";
+    
+//---------------------Task 8-------------------------
+        a.classList.remove("fit-to-screen");
+        a.classList.add("small_n_margin");
+    </script>
+</body>
+</html>
