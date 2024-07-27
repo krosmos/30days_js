@@ -17,5 +17,4 @@ const add = (()=>{
 add(); //1
 add(); //2
 add(); //3
-console.log(counter);
-
+console.log(add()); //4
