@@ -1,7 +1,4 @@
 //string algos
-
-const { max } = require("lodash");
-
 //task6
 let charCount = {};
 let str = "abcccdabbdc";
