@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Activity 1</title>
+</head>
+<body>
+    <h1>Activity1: Understanding LocalStorage</h1>
+    <script>
+        //task1
+        const greet = "Haggi says hello";
+      localStorage.setItem("greet", greet);
+      const retrievedValue = localStorage.getItem("greet");
+      console.log(retrievedValue);
+    </script>
+    <script>
+        //task2
+        const piddi = {
+            todo: ['study','eat','sleep','play'],
+            emo: ['happy','sad','angry']
+        };
+        const stringedObj = JSON.stringify(piddi);
+        localStorage.setItem("piddi",stringedObj);
+        const rValStr = localStorage.getItem("piddi");
+        const rVal = JSON.parse(rValStr);
+        console.log(rVal);
+    </script>
+</body>
+</html>

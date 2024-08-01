@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>act3</title>
+</head>
+<body>
+    <script>
+        //task5
+        const a = "piddi";
+        sessionStorage.setItem("key", a);
+        const rVal = sessionStorage.getItem("key");
+        console.log(rVal);
+    </script>
+    <script>
+        //task6
+        const piddi = {
+            todo: ['study','eat','sleep','play'],
+            emo: ['happy','sad','angry']
+        };
+        const stringedObj = JSON.stringify(piddi);
+        sessionStorage.setItem("piddi",stringedObj);
+        const rValStr = sessionStorage.getItem("piddi");
+        const rValue = JSON.parse(rValStr);
+        console.log(rValue);
+    </script>
+    </script>
+</body>
+</html>

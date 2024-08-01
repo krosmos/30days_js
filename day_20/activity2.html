@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>activity 2</title>
+</head>
+<body>
+    <h1>Using localStorage</h1>
+    <form>
+        <input class="person" type="text" name="name" placeholder="Enter name" required>
+        <input class="person" type="email" name="email" placeholder="enter email" required>
+        <input type="submit">
+        <p></p>
+    </form>
+    <script>
+        let sub = document.querySelector("form");
+        let display = document.querySelector("p");
+        sub.addEventListener('submit',(event)=>{
+            event.preventDefault();
+            const formdata = new FormData(event.target);
+            const user = {};
+
+            formdata.forEach((value,key)=>{
+                user[key] = value;
+            });
+            const strObj = JSON.stringify(user);
+            localStorage.setItem("formdata",strObj);
+            console.log(user.name,user.email);
+        });
+        window.onload = ()=>{
+            const getStrobj = localStorage.getItem("formdata");
+            if (getStrobj) {
+                const parsedObj = JSON.parse(getStrobj);
+                display.innerHTML = `Name: ${parsedObj.name} <br>Email: ${parsedObj.email}`;
+            }
+        }
+    </script>
+    <script>
+        localStorage.setItem('gomen',"garbage to be deleted");
+        console.log(localStorage);
+        localStorage.removeItem('gomen');
+        console.log(localStorage);
+    </script>
+</body>
+</html>

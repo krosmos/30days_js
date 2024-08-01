@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>act5</title>
+</head>
+<body>
+    <script>
+        //task9
+        function saveToStorage(key, value) {
+          localStorage.setItem(key, value);
+          sessionStorage.setItem(key, value);
+          console.log("localstorage:", localStorage.getItem(key));
+          console.log("sessionstorage:", sessionStorage.getItem(key));
+        }
+        saveToStorage("name", "piddi");
+    </script>
+    <script>
+        //task10
+        function clearStorage() {
+            localStorage.clear();
+            sessionStorage.clear();
+            console.log("localstorage:", localStorage);
+            console.log("sessionstorage:", sessionStorage);
+        }
+        console.log("localstorage:", localStorage);
+        console.log("sessionstorage:", sessionStorage);
+        clearStorage();
+    </script>
+</body>
+</html>

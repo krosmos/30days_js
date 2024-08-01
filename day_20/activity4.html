@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>activity 4</title>
+</head>
+<body>
+    <h1>Using sessionStorage</h1>
+    <form>
+        <input type="text" name="name" placeholder="Enter name" required>
+        <input type="email" name="email" placeholder="enter email" required>
+        <input type="submit">
+        <p></p>
+    </form>
+    <script>
+        let sub = document.querySelector("form");
+        let display = document.querySelector("p");
+        sub.addEventListener('submit',(event)=>{
+            event.preventDefault();
+            const formdata = new FormData(event.target);
+            const user = {};
+
+            formdata.forEach((value,key)=>{
+                user[key] = value;
+            });
+            const strObj = JSON.stringify(user);
+            sessionStorage.setItem("formdata",strObj);
+            console.log(user.name,user.email);
+        });
+        window.onload = ()=>{
+            const getStrobj = sessionStorage.getItem("formdata");
+            if (getStrobj) {
+                const parsedObj = JSON.parse(getStrobj);
+                display.innerHTML = `Name: ${parsedObj.name} <br>Email: ${parsedObj.email}`;
+            }
+        }
+    </script>
+    <script>
+        sessionStorage.setItem('gomen',"garbage to be deleted");
+        console.log(sessionStorage);
+        sessionStorage.removeItem('gomen');
+        console.log(sessionStorage);
+    </script>
+</body>
+</html>
