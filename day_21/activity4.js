@@ -1,19 +1,43 @@
-//merge 2 sorted lists
-function mergelist(arr1,arr2){
-    let i = j = 0;
-    let arr = [];
-    while(i < arr1.length || j < arr2.length){
-        if(arr1[i] < arr2[j]){
-            arr.push(arr1[i]);
-            i++;
-        }
-        else{
-            arr.push(arr2[j]);
-            j++;
-        }
-    }
-    return arr;
+function ListNode(val, next = null) {
+    this.val = val;
+    this.next = next;
 }
-console.log(mergelist([1,3,5,7],[2,4,6,8]));
-console.log(mergelist([0,4,5,7],[3,4,7,8]));
-console.log(mergelist([-3,-1,5,7],[-5,-4,0,8]));
+
+
+function mergeTwoLists(l1, l2) {
+    const dummy = new ListNode(0);
+    let current = dummy;
+
+    while (l1 !== null && l2 !== null) {
+        if (l1.val < l2.val) {
+        current.next = l1;
+        l1 = l1.next;
+        } else {
+        current.next = l2;
+        l2 = l2.next;
+        }
+        current = current.next;
+    }
+    current.next = l1 !== null ? l1 : l2;
+
+    return dummy.next;
+}
+
+function printList(node) {
+const values = [];
+while (node) {
+    values.push(node.val);
+    node = node.next;
+}
+console.log(values.join(" -> "));
+}
+
+const l1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+const l2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+const mergedList1 = mergeTwoLists(l1, l2);
+printList(mergedList1);
+
+const l3 = new ListNode(-1, new ListNode(0, new ListNode(8)));
+const l4 = new ListNode(-3, new ListNode(-2, new ListNode(5)));
+const mergedList2 = mergeTwoLists(l3, l4);
+printList(mergedList2);
