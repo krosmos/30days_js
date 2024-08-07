@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Movie Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="inputName" placeholder="Search">
+        <button class="search-btn">
+            <img src="https://static.vecteezy.com/system/resources/previews/025/213/365/original/search-icon-in-black-square-png.png" alt="Search" class="search-icon">
+        </button>
+    </div>
+    <div class="movie-card">
+        <div class="poster-container">
+            <img id="posterImage" class="poster">
+            <div class="poster-overlay"></div>
+            <div class="movie-info">
+                <div class="rating" id="ratingDisplay"></div>
+                <h2 class="movie-title" id="titleDisplay"></h2>
+            </div>
+        </div>
+        <p class="movie-details" id="detailsDisplay">Search for a movie.<br><br></p>
+        <button class="more-info-btn">more info ▼</button>
+        <div class="more"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

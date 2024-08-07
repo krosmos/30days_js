@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    transition: background-color 0.5s ease;
+}
+
+.main {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 30px rgba(0,0,0,0.15);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    animation: fadeIn 1s ease-out;
+}
+
+#cityname {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+#cityname:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#search {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+#search:hover {
+    background-color: #0056b3;
+}
+
+#search:active {
+    transform: scale(0.98);
+}
+
+.weatherInfo {
+    margin-top: 20px;
+    animation: slideIn 0.5s ease-out;
+}
+
+.curr {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.curr:hover {
+    background-color: #e9ecef;
+}
+
+.forecast {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.upcomingDays {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 120px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.upcomingDays:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.upcomingDays:nth-child(1) { animation-delay: 0.1s; }
+.upcomingDays:nth-child(2) { animation-delay: 0.2s; }
+.upcomingDays:nth-child(3) { animation-delay: 0.3s; }
+.upcomingDays:nth-child(4) { animation-delay: 0.4s; }
+
+.upcomingDays .date {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.upcomingDays .temp {
+    margin-bottom: 5px;
+}
+
+.upcomingDays .condition {
+    font-size: 0.9em;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 480px) {
+    .forecast {
+        flex-wrap: wrap;
+    }
+    
+    .upcomingDays {
+        flex-basis: calc(50% - 5px);
+        margin-bottom: 10px;
+    }
+}
