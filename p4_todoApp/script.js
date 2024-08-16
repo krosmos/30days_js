@@ -150,6 +150,9 @@ function recommendTask() {
     // Calculate time differences for all tasks
     let timeDiff = Tasks.map(task => {
         let taskDate = new Date(task.date); // Ensure date is parsed correctly
+        let taskTime = timeStringToSeconds(task.time);
+        // Combine the date and time
+        taskDate.setSeconds(taskDate.getSeconds() + taskTime);
         let diff = taskDate - curr;
         return { id: task.id, diff: diff };
     });
@@ -180,4 +183,9 @@ function displayOnRecommend(task) {
         <h6>Time: ${displayDate(task.date)} - ${task.time}</h6>
     `;
     reco.appendChild(taskNode);
+}
+function timeStringToSeconds(str){
+    let a = str.split(':');
+    let sec = (+a[0])*60*60 + (+a[1])*60;
+    return sec;
 }
